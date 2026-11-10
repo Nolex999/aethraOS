@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Opens the simulator. Pass --headless and its options for a run without a window.
+source "$(dirname "$0")/_env.sh"
+scripts/build host-debug >/dev/null
+exec build/host-debug/aethra_sim "$@"

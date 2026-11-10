@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+source "$(dirname "$0")/_env.sh"
+scripts/build host-debug >/dev/null
+ctest --preset host-debug

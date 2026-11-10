@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "configurePresets": [
+    { "name": "host-debug", "binaryDir": "${sourceDir}/build/host-debug",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" } },
+    { "name": "host-asan", "binaryDir": "${sourceDir}/build/host-asan",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer" } },
+    { "name": "arm-cortex-m7-release", "binaryDir": "${sourceDir}/build/arm",
+      "toolchainFile": "${sourceDir}/cmake/arm-cortex-m7.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "MinSizeRel" } }
+  ],
+  "buildPresets": [
+    { "name": "host-debug", "configurePreset": "host-debug" },
+    { "name": "host-asan", "configurePreset": "host-asan" },
+    { "name": "arm-cortex-m7-release", "configurePreset": "arm-cortex-m7-release" }
+  ],
+  "testPresets": [
+    { "name": "host-debug", "configurePreset": "host-debug", "output": { "outputOnFailure": true } },
+    { "name": "host-asan", "configurePreset": "host-asan", "output": { "outputOnFailure": true } }
+  ]
+}

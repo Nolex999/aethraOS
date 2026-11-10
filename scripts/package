@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Builds the T1 app and records its checksum. Needs Node and nwlink. Installs nothing on a device.
+source "$(dirname "$0")/_env.sh"
+tools/build/build_nwa.sh
+sha256sum build/nwa/aethra.nwa | tee build/nwa/aethra.nwa.sha256

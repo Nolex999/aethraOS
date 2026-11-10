@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Usage: scripts/build [host-debug|host-asan|arm-cortex-m7-release]
+source "$(dirname "$0")/_env.sh"
+preset="${1:-host-debug}"
+if [ "$preset" = "arm-cortex-m7-release" ]; then
+  cmake --preset "$preset" "${GENERATOR[@]}" >/dev/null
+else
+  cmake --preset "$preset" "${GENERATOR[@]}" "${HOST_CC[@]}" >/dev/null
+fi
+cmake --build --preset "$preset" -j8

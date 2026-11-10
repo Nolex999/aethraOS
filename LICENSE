@@ -1,0 +1,6 @@
+No license has been chosen yet. Until one is, all rights are reserved by the author.
+
+Third-party notes:
+- src/boot_anim/spectrum_sprite.h depicts a Pokemon character owned by Nintendo,
+  Game Freak and Creatures. Replace it before any public release.
+- Firmware dumps and NumWorks code are not part of this project and must not be added.

@@ -1,0 +1,9 @@
+build/
+__pycache__/
+*.bin
+*.dfu
+*.i64
+*.idb
+*.raw
+*.ppm
+*.exe

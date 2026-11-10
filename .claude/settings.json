@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(dfu-util* -D *)",
+      "Bash(*dfu-util*.exe* -D *)",
+      "Bash(*aethra_flash.py* --write*)",
+      "Bash(*nwlink* install-nwa*)"
+    ]
+  }
+}

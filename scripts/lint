@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$(dirname "$0")/_env.sh"
+python tools/analysis/check_layers.py src
+if command -v cppcheck >/dev/null; then
+  cppcheck --enable=warning,performance,portability --error-exitcode=1 -Isrc --quiet src
+else
+  echo "cppcheck is not installed: static analysis skipped"
+fi

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Reports what is missing. It never installs anything.
+source "$(dirname "$0")/_env.sh"
+missing=0
+for tool in cmake gcc arm-none-eabi-gcc python; do
+  if command -v "$tool" >/dev/null; then echo "ok      $tool"; else echo "MISSING $tool"; missing=1; fi
+done
+for tool in clang-format cppcheck node; do
+  if command -v "$tool" >/dev/null; then echo "ok      $tool"; else echo "absent  $tool (optional)"; fi
+done
+exit "$missing"
